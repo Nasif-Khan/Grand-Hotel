@@ -1,0 +1,693 @@
+html{
+    /* font-size: 62.5%; */
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* navbar */
+
+/* sidebar */
+.sidebar{
+    width: 8rem;
+    height: 100vh;
+    background: #eee;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.menu-icon{
+    margin-top: 3rem;
+    color: #999;
+    cursor: pointer;
+}
+
+.line{
+    height: 0.2rem;
+    width: 2.5rem;
+    background: #222;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.line1, .line3{
+    width: 1.5rem;
+    transition: all 0.5s;
+}
+
+.menu-icon:hover .line{
+    width: 2.5rem;
+}
+
+.social-icon-list{
+    list-style: none;
+    padding: 0;
+    color: #ccc;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.social-link{
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.social-link:hover{
+    color: #f8a45c;
+
+}
+
+.year{
+    margin-bottom: 1rem;
+    color: #999;
+    font-size: 1.2rem;
+}
+/* end of sidebar */
+
+/* navigation */
+.navigation{
+    /* margin-left: 8rem; */
+    position: fixed;
+    left: -32rem;
+    width: 40rem;
+    height: 100vh;
+    /* rgba(210, 215, 211,0.8) */
+    background: linear-gradient(to top, rgba(34,32, 41,1),rgba(34, 32, 41,0.8)) ,url('../images/nav-bg.jpg') no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s cubic-bezier(1,0,0,1);
+}
+
+.navigation-heading{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 3.5rem; 
+    letter-spacing: 0.5rem;   
+    color: #f8a45c;
+    text-align: center;
+}
+
+.navigation-search{
+    position: relative;
+}
+
+.navigation-search-input{
+    width: 30rem;
+    padding: 1rem 2rem;
+    font-family: 'josefin sans', sans-serif; 
+    font-size: 1.6rem;
+    letter-spacing: 0.15rem;
+    background: rgba(0, 0, 0,0.3);
+    color: #ffd986;
+    outline: none;
+    border: 0.2rem solid #999;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(130, 130,130 , 0.2);
+    border-radius: 5rem;
+}
+
+.navigation-search-input::placeholder{
+    color: #ffd986;
+}
+
+.navigation-search-input:focus{
+    border: 0.2rem solid #ffd986;
+    background: rgba(0, 0, 0,0.5);
+}
+
+.navigation-search-btn{
+    border: none;
+    background-color: transparent;
+    color: #ffd986;
+    font-size: 1.8rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.navigation-list{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 25rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-items{
+    list-style: none;
+    text-align: center;
+    position: relative;
+}
+
+.navigation-link{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navigation-link::before,.navigation-link::after{
+    content: "";
+    height: 0.1rem;
+    width: 0rem;
+    background: #f8a45c;
+    position: absolute;
+    top: 1rem;
+    
+}
+.navigation-link::before{
+    left: -4rem;
+    transition: width 0.5s ease-in-out
+}
+.navigation-link::after{
+    right: -4rem;
+    transition: width 0.5s ease-in-out
+}
+
+.navigation-link:hover {
+    color: #f8a45c;
+}
+
+.navigation-link:hover::before,.navigation-link:hover::after{
+    width: 3rem;
+    transition: all 0.3s;
+}
+
+.copyright{
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.toggle:checked ~ .navigation{
+    left: 8rem;
+}
+
+.toggle:checked ~ .sideber .line1{
+    transform: rotate(-45deg) translate(-0.5rem,0.5rem);
+    width: 2.5rem;
+}
+
+.toggle:checked ~ .sideber .line2{
+    opacity: 0;
+}
+
+.toggle:checked ~ .sideber .line3{
+    transform: rotate(45deg) translate(-0.5px,-0.5px);
+    width: 2.5rem;
+}
+/* end of navigation */
+/* end of navbar */
+
+/* header */
+.header{
+    margin-left: 8rem;
+    height: 100vh;
+    background: linear-gradient(to top, rgba(0,0,0,0.8),rgba(0,0,0,0.5)), url('../images/header.jpg') center no-repeat;
+    background-size:  cover;
+}
+
+.brand{
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo{
+    width: 5rem;
+}
+
+.brand h3{
+    font-family: 'josefin sans', sans-serif;
+    font-size: 3rem;
+    color: #f8a45c;
+    letter-spacing: 0.2rem;
+}
+
+.banner{
+    display: flex;
+    height: 50rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-heading{
+    margin: 0;
+    font-family: 'josefin sans', sans-serif;
+    letter-spacing: 0.2rem;
+    font-size: 7.2rem;
+    color: #fff;
+    animation: anim 2s;
+}
+
+.banner-paragraph{
+    font-size: 3.2rem;
+    font-weight: 200;
+    color: #fff;
+    animation: anim 1.5s 0.5s backwards;
+}
+
+.banner-button{
+    padding: 1.5rem 4rem;
+    border-radius: 5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    color: #222;
+    background: linear-gradient(to right,gold,goldenrod, orange);
+    animation: anim 1.5s 1s backwards;
+}
+
+.banner-button:hover{
+    background: linear-gradient(to left,gold,goldenrod, orange);
+}
+
+@keyframes anim{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* end of header */
+
+/* about us */
+.about-us{
+    margin-left: 8rem;
+    display: flex;
+    background: #777;
+    padding: 2.5rem 0;
+}
+
+.about-us-content{
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us-heading{
+    font-family: 'josefin sans', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.about-us-subheading{
+    color:#f8a45c;
+    font-family: 'josefin sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 200;
+    letter-spacing: 0.2rem;
+}
+
+.about-us-paragraph{
+    text-align: center;
+    font-size: 1.6rem;
+    font-style:italic;
+    padding: 0 6rem;
+    margin: 0;
+    color: #fff;
+}
+
+.about-us-btn{
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.6rem;
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    border: 0.2rem solid transparent;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid #FFB000;
+    color: #FFB000;
+
+}
+
+.arrow-btn{
+    margin-left: 0.5rem;
+    transition: all 0.5s;
+}
+
+.about-us-btn:hover .arrow-btn{
+    margin-left: 1.5rem;
+}
+
+.about-us-images{
+    flex: 1 1 50%;    
+    position: relative;
+}
+
+.image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 0.2rem solid #FFB000;
+    border-radius: 1rem;
+    box-shadow: 0 3rem 6rem rgba(0,0,0,0.4);
+    transition: all 0.8s;
+}
+
+.image-1{
+    transform: translate(-30%,-10%);
+}
+
+.image-2{
+    transform: translate(-80%,-70%);
+}
+
+.image-3{
+    transform: translate(-40%,-50%);
+}
+
+.image-4{
+    transform: translate(-20%,-90%);
+}
+
+.image-1:hover, .image-2:hover, .image-3:hover, .image-4:hover{
+    z-index: 10;
+    scale: 1.3;
+}
+/* end of about us */
+
+/* common header */
+.common-header{
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    color: #f8a45c;
+    text-align: center;
+    margin: 5rem 0;
+}
+
+.small-underline{
+    width: 10rem;
+    height: 0.2rem;
+    margin: 0 auto 1rem auto;
+    background: #f8a45c; 
+}
+
+.large-underline{
+    width: 20rem;
+    height: 0.2rem;
+    margin: auto;
+    background: #f8a45c; 
+}
+
+
+/* end of common header */
+
+/* rooms */
+.rooms{
+    margin-left: 8rem;
+}
+
+.room-card-wrapper{    
+    /* margin-top: 5rem; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.room-card{
+    width: 40rem;
+    background-color: #777;
+    margin: 3rem;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.room-card-img{
+    width: 100%;
+}
+
+.room-card-content{
+    padding: 2rem;
+    color: #333;
+}
+
+.room-card-heading{
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.room-card-paragraph{
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.room-price{
+    margin: 0;
+    font-size: 5rem;
+    font-weight: 300;
+    color: #fff;
+    /* text-align: right; */
+}
+
+.room-card-btn{
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.6rem;
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    border: 0.2rem solid transparent;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid #FFB000;
+    color: #FFB000;
+}
+
+.room-card-btn:hover .arrow-btn{
+    margin-left: 1.5rem;
+}
+
+.rooms-btn-wrapper{
+    text-align: center;
+    margin: 5rem 0;
+}
+
+.rooms-btn{
+    width: 20rem;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    border: 0.2rem solid #f8a45c;
+    color: #f8a45c;
+    background-color: transparent;
+    outline: none;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+    transition: all 0.2s;
+}
+
+.rooms-btn:hover{
+    background: #f8a45c;
+    color: #fff;
+}
+/* end of rooms */
+
+/* customers */
+.customers{
+    margin-left: 8rem;
+    /* background: #15141b; */
+    background: #777;
+    padding-bottom: 8rem;
+    padding-top: 3rem;
+}
+
+.customers-paragraph{
+    text-align: center;
+    margin: 2rem auto 8rem auto;
+    width: 65%;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.customer-card-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.customer-card{
+    width:50rem;
+    display: flex;
+    background-color: #ccc;
+}
+
+.customer-image-wrapper{
+    margin: auto 0;
+}
+
+.customer-image{
+    width:20rem;
+    margin-left: -1.5rem;
+}
+
+.customer-info{
+    margin-left: 2rem;
+}
+
+.customer-name{
+    font-size: 2rem;
+    font-weight: 300;
+    color: #222;
+    margin-bottom: 0;
+}
+
+.customer-paragraph-1{
+    color: #b85d1c;
+    font-size: 1.2rem;
+    font-style: italic ;
+}
+
+.customer-paragraph-2{
+    font-size: 1.3rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #222;
+    margin: 1rem 0;
+}
+/* end of customers */
+
+/* footer */
+.footer{
+    margin-left: 8rem;
+}
+
+.main-part{
+    display: flex;
+    justify-content: space-between;
+    background-color: #1a1a1a;
+    padding: 4rem;
+}
+
+.footer-heading{
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: goldenrod;
+    margin: 1rem 0 4rem 0 ;
+    
+}
+
+.footer-list{
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list-item{
+    margin-bottom: 2rem;
+}
+
+.footer-list-link{
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.contact p{
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 4rem;
+}
+
+.footer-form{
+    display: flex;
+}
+
+.footer-input{
+    font-family: 'josefin sans', sans-serif;
+    font-size: 1.8rem;
+    color: #333;
+    padding: 0.5rem;
+    width: 25rem;
+    outline: none;
+}
+
+.footer-btn{
+    margin: 0;
+    padding: 0.5rem;
+    background-color: #b85d1c;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.gallery-images{
+    max-width: 35rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.img-wrapper{
+    width: 10rem;
+    margin: 0.5rem;
+    overflow: hidden;
+}
+
+.footer-image{
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: all 0.5s;
+}
+
+.footer-image:hover{
+    transform: scale(1.5);
+}
+
+.creator-part{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 0 5rem;
+}
+
+.copyright-text{
+    font-size: 1.3rem;
+    color: #ccc;
+}
+
+.text-right{
+    font-size: 1.3rem;
+    color: #ccc;
+}
+
+.text-right i{
+    font-size: 1.5rem;
+    margin: 0 0.3rem;
+    color: tomato;
+}
+
+.text-right span{
+    color: gold
+}
+
+/* end of footer */
