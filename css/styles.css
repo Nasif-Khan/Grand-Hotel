@@ -855,10 +855,6 @@ body{
 }
 
 @media(max-width: 430px){
-    .banner{
-        height: 100%;
-        margin-top: -5rem;
-    }
     .about-us{
         padding-bottom: 10rem
     }
