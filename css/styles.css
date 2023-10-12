@@ -437,12 +437,13 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /* column-gap: 20rem; */
 }
 
 .room-card{
-    width: 40rem;
+    width: 50rem;
     background-color: #777;
-    margin: 3rem;
+    margin: 5rem;
     box-shadow: 0 1rem 3rem rgba(0,0,0,0.3);
     text-align: center;
 }
