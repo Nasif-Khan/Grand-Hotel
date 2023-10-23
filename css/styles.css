@@ -25,11 +25,22 @@ body{
     z-index: 10;
 }
 
-.menu-icon{
+/* .menu-icon{
     margin-top: 3rem;
     color: #999;
     cursor: pointer;
-}
+} */
+
+.menu-icon{
+    display: block;
+      margin-top: 3rem;
+      color: #999;
+      cursor: pointer;
+    appearance: none;
+    border: none;
+    outline: none;
+    background:none;
+  }
 
 .line{
     height: 0.2rem;
@@ -203,6 +214,11 @@ body{
     left: 8rem;
 }
 
+.navigation.is-active{
+    left: 8rem;
+}
+
+/*
 .toggle:checked ~ .sideber .line1{
     transform: rotate(-45deg) translate(-0.5rem,0.5rem);
     width: 2.5rem;
@@ -215,7 +231,22 @@ body{
 .toggle:checked ~ .sideber .line3{
     transform: rotate(45deg) translate(-0.5px,-0.5px);
     width: 2.5rem;
+} */
+
+.menu-icon.is-active .line1{
+    transform: rotate(-405deg) translate(-0.5rem,0.5rem);
+    width: 2.5rem;
 }
+
+.menu-icon.is-active .line2-click{
+    opacity: 0;
+}
+
+.menu-icon.is-active .line3{
+    transform: rotate(405deg) translate(-0.5rem,-0.5rem);
+    width: 2.5rem;
+} 
+
 /* end of navigation */
 /* end of navbar */
 
